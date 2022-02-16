@@ -1,9 +1,19 @@
 # Glidian Technical Interview
 
+This repository includes the boilerplate for a simple React-based app for use during the Glidian technical interview.
+
+## Development environment
+
+We encourage you to develop in an environment you are comfortable in.
+We offer the option to use a remote development environment, if that is your preference, or if you are having trouble
+installing the dependencies locally.
+
+If you wish to use the remote development environment, please let us know at the start of the interview, and we will provide you a link to a VS Code Live Share session.
+You may join this session via [VS Code](https://code.visualstudio.com/) with [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) or directly in your browser.
+
 ## Your assignment
 
-This repo includes the boilerplate for a simple React-based user management app. During the
-interview, we will provide a few requirements and ask you to build them out in real time.
+During the interview, we will provide a few requirements and ask you to build them out in real time.
 
 To prepare, we recommend you spend 15-30 minutes exploring this repo. Here are some things to focus on:
 

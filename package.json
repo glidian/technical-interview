@@ -6,22 +6,25 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
+    "body-parser": "^1.19.0",
     "concurrently": "^5.3.0",
+    "express": "^4.17.1",
     "lodash": "^4.17.20",
+    "ngrok": "^4.3.0",
     "nodemon": "^2.0.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
     "sequelize": "^6.3.5",
     "sqlite3": "^5.0.1",
-    "web-vitals": "^0.2.4",
-    "express": "^4.17.1",
-    "body-parser": "^1.19.0"
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "echo Please use \\'npm run start:frontend\\' or \\'npm run start:backend\\'",
     "start:frontend": "react-scripts start",
+    "start:frontend:ngrok": "DANGEROUSLY_DISABLE_HOST_CHECK=true npm run start:frontend",
     "start:backend": "nodemon --unhandled-rejections=strict backend",
+    "ngrok": "ngrok http 3000",
     "build": "react-scripts build",
     "test": "react-scripts test"
   },
