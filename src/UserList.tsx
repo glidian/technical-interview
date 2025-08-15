@@ -2,8 +2,8 @@
  * CREATE YOUR USER INTERFACE HERE
  ****************************************************************************************/
 
-import "./UsersList.css";
+import "./UserList.css";
 
-export default function UsersList() {
+export default function UserList() {
   return null;
 }

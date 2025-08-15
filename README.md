@@ -47,8 +47,8 @@ git bundle create <yourname>.bundle main
 
 This is a basic React-based app. Code is in the `src` folder. The most relevant files for you are:
 
-- `src/App.jsx` and `src/UsersList.jsx` are the main React components you'll be building.
-- `src/api.js` contains methods for interacting with the backend via the `fetch` interface.
+- `src/App.tsx` and `src/UsersList.tsx` are the main React components you'll be building.
+- `src/api.ts` contains methods for interacting with the backend via the `fetch` interface.
 
 ### Backend
 
@@ -143,6 +143,6 @@ const plainObject = mal.toJSON();
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project was tested using Node.js v12.16.1.
+This project was tested using Node.js v24.4.1.
 While it may work with earlier versions, we strongly recommend using the above version or later.
 (Multiple versions of Node.js can be installed using [nvm](https://github.com/nvm-sh/nvm).)

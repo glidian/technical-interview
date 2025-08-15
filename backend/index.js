@@ -9,7 +9,7 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const { User, Group } = require("./db");
+const { Group } = require("./db");
 
 const app = express();
 
@@ -30,7 +30,7 @@ app.use("/", express.static(path.resolve(__dirname, "..", "build")));
 app.get("/groups", async (req, res, next) => {
   try {
     // db query for all groups, returning only the id and name columns
-    const groups = await Group.findAll({ attributes: ["id", "name"] })
+    const groups = await Group.findAll({ attributes: ["id", "name"] });
     // all requests must eventually call one of the following:
     // 1. res.json(obj) - serializes obj to JSON (with toJSON() if necessary) and return it in the response body
     // 2. res.send() - return an empty response body
