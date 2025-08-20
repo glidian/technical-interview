@@ -5,17 +5,18 @@
  * endpoints below, which exercise basic endpoint and database operations
  ****************************************************************************************/
 
-const path = require("path");
-const express = require("express");
-const bodyParser = require("body-parser");
+import path from "path";
+import express from "express";
+import bodyParser from "body-parser";
 
-const { Group } = require("./db");
+import db from "./db/index.js";
+const { Group } = db;
 
 const app = express();
 
 app.use(bodyParser.json());
 
-app.use("/", express.static(path.resolve(__dirname, "..", "build")));
+app.use("/", express.static(path.resolve(process.cwd(), "build")));
 
 /******************************
  * START ENDPOINT DEFINITIONS *
@@ -66,4 +67,4 @@ app.listen(5000, () => {
   console.log("App running on http://localhost:5000");
 });
 
-module.exports = app;
+export default app;

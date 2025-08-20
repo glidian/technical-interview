@@ -115,4 +115,4 @@ const Users = [
   },
 ];
 
-module.exports = { Groups, Users };
+export { Groups, Users };

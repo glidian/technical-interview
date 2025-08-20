@@ -1,7 +1,7 @@
-const chalk = require("chalk");
-const { Sequelize, DataTypes } = require("sequelize");
+import chalk from "chalk";
+import { Sequelize, DataTypes } from "sequelize";
 
-const loadFixtures = require("./loadFixtures");
+import loadFixtures from "./loadFixtures.js";
 
 const sequelize = new Sequelize({
   dialect: "sqlite",
@@ -64,11 +64,9 @@ Group.belongsToMany(User, { through: UserGroup });
 
 const models = { sequelize, User, Group, UserGroup };
 
-(async function () {
-  console.log(chalk.yellow("Initializing database..."));
-  await sequelize.sync({ force: true });
-  await loadFixtures(models);
-  console.log(chalk.green(" ... database initialization complete"));
-})();
+console.log(chalk.yellow("Initializing database..."));
+await sequelize.sync({ force: true });
+await loadFixtures(models);
+console.log(chalk.green(" ... database initialization complete"));
 
-module.exports = models;
+export default models;
