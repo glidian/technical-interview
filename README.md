@@ -47,8 +47,8 @@ git bundle create <yourname>.bundle main
 
 This is a basic React-based app. Code is in the `src` folder. The most relevant files for you are:
 
-- `src/App.jsx` and `src/UsersList.jsx` are the main React components you'll be building.
-- `src/api.js` contains methods for interacting with the backend via the `fetch` interface.
+- `src/App.tsx` and `src/UsersList.tsx` are the main React components you'll be building.
+- `src/api.ts` contains methods for interacting with the backend via the `fetch` interface.
 
 ### Backend
 
@@ -97,11 +97,11 @@ const { User, Group } = require("./db");
 
 // Find a specific User by id
 // equivalent to SQL: select * from User where id = 1;
-const mal = await User.findByPk(1);
+const frodo = await User.findByPk(1);
 
 // Find a User by some other attribute
-// equivalent to SQL: select * from User where nickname = 'Zoe';
-const zoe = await User.findOne({ where: { nickname: "Zoe" } });
+// equivalent to SQL: select * from User where username = 'sam';
+const sam = await User.findOne({ where: { username: "sam" } });
 
 // Find multiple Users by id
 // equivalent to SQL: select * from User where id in (1, 2);
@@ -112,20 +112,20 @@ const users = await User.findAll({ where: { id: [1, 2] } });
 const users = await User.findAll({});
 
 // Find all Groups that a User belongs to
-const wash = await User.findByPk(3);
-const groups = await wash.getGroups();
+const aragorn = await User.findByPk(5);
+const groups = await aragorn.getGroups();
 
 // Find all Users in a Group
-const crew = await Group.findByPk(2);
-const users = await crew.getUsers();
+const fellowship = await Group.findByPk(2);
+const users = await fellowship.getUsers();
 
 // Updating basics
 // ---------------
 
 // Updating a record
-// equivalent to SQL: update User set nickname = 'Ambassador' where id = 5;
-const inara = await User.findByPk(5);
-await inara.update({ nickname: "Ambassador" });
+// equivalent to SQL: update User set name = 'Aragorn, King of Gondor' where id = 5;
+const aragorn = await User.findByPk(5);
+await aragorn.update({ name: "Aragorn, King of Gondor" });
 
 // Manipulating records
 // --------------------
@@ -136,13 +136,13 @@ const users = await User.findAll({ attributes: ["id", "name"] });
 
 // Note that returned objects are Sequelize instances with a lot of extra functionality.
 // To convert into a simple javascript object, do this:
-const plainObject = mal.toJSON();
+const plainObject = frodo.toJSON();
 ```
 
 ## Miscellaneous
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project was tested using Node.js v12.16.1.
+This project was tested using Node.js v24.4.1.
 While it may work with earlier versions, we strongly recommend using the above version or later.
 (Multiple versions of Node.js can be installed using [nvm](https://github.com/nvm-sh/nvm).)

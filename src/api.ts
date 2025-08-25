@@ -1,7 +1,12 @@
+export type GroupInfo = {
+  id: string;
+  name: string;
+};
+
 /**
  * Fetch a URL given as the first URL and parse the response as JSON
  */
-async function fetchJson(...args) {
+async function fetchJson<T>(...args: Parameters<typeof fetch>): Promise<T> {
   const resp = await fetch(...args);
   return resp.json();
 }
@@ -9,8 +14,7 @@ async function fetchJson(...args) {
 /**
  * Make a POST request to the `url` with `body` and parse response as JSON
  */
-// eslint-disable-next-line no-unused-vars
-function postJson(url, body) {
+export function postJson<T>(url: string, body: any): Promise<T> {
   return fetchJson(url, {
     body,
     method: "POST",
@@ -21,5 +25,5 @@ function postJson(url, body) {
 }
 
 export function listGroups() {
-  return fetchJson("/groups");
+  return fetchJson<GroupInfo[]>("/groups");
 }

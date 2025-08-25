@@ -5,35 +5,148 @@
 
 const All = {
   id: 1,
-  name: 'All',
-}
+  name: "All",
+};
 
-const Crew = {
+const Fellowship = {
   id: 2,
-  name: 'Crew',
+  name: "Fellowship",
 };
 
-const Passengers = {
+const Hobbits = {
   id: 3,
-  name: 'Passengers',
+  name: "Hobbits",
 };
 
-const Veterans = {
+const Wizards = {
   id: 4,
-  name: 'Veterans',
+  name: "Wizards",
 };
 
-exports.Groups = [All, Crew, Passengers, Veterans];
-exports.Users = [
-  { id: 1, name: "Malcolm Reynolds", username: "mal", Groups: [All, Crew, Veterans], isActivated: true, isBanned: false },
-  { id: 2, name: "Zoe Alleyne Washburne", username: "zoe", Groups: [All, Crew, Veterans], isActivated: false, isBanned: false },
-  { id: 3, name: "Hoban Washburne", username: "wash", Groups: [All, Crew], isActivated: false, isBanned: false },
-  { id: 4, name: "Kaywinnet Lee Frye", username: "kaylee", Groups: [All, Crew], isActivated: false, isBanned: false },
-  { id: 5, name: "Inara Serra", username: "inara", Groups: [All, Crew], isActivated: false, isBanned: false },
-  { id: 6, name: "Jayne Cobb", username: "jayne", Groups: [All, Crew], isActivated: false, isBanned: false },
-  { id: 7, name: "Derrial Book", username: "shepherd", Groups: [All, Passengers, Veterans], isActivated: false, isBanned: false },
-  { id: 8, name: "Simon Tam", username: "doc", Groups: [All, Passengers], isActivated: false, isBanned: false },
-  { id: 9, name: "River Tam", username: "river", Groups: [All, Passengers], isActivated: false, isBanned: false },
-  { id: 10, name: "Bester", username: "bester", Groups: [All, Crew], isActivated: false, isBanned: true },
-  { id: 11, name: "Saffron", username: "bridget", Groups: [All, Passengers], isActivated: false, isBanned: true },
-]
+const Elves = {
+  id: 5,
+  name: "Elves",
+};
+
+const Humans = {
+  id: 6,
+  name: "Humans",
+};
+
+const Groups = [All, Fellowship, Hobbits, Wizards, Elves, Humans];
+const Users = [
+  {
+    id: 1,
+    name: "Frodo Baggins",
+    username: "frodo",
+    Groups: [All, Hobbits, Fellowship],
+    isActivated: true,
+    isBanned: false,
+  },
+  {
+    id: 2,
+    name: "Samwise Gamgee",
+    username: "sam",
+    Groups: [All, Hobbits, Fellowship],
+    isActivated: false,
+    isBanned: false,
+  },
+  {
+    id: 3,
+    name: "Meriadoc Brandybuck",
+    username: "merry",
+    Groups: [All, Hobbits, Fellowship],
+    isActivated: false,
+    isBanned: false,
+  },
+  {
+    id: 4,
+    name: "Peregrine Took",
+    username: "pippin",
+    Groups: [All, Hobbits, Fellowship],
+    isActivated: false,
+    isBanned: false,
+  },
+  {
+    id: 5,
+    name: "Aragorn, Son of Arathorn",
+    username: "strider",
+    Groups: [All, Fellowship, Humans],
+    isActivated: false,
+    isBanned: false,
+  },
+  {
+    id: 6,
+    name: "Boromir, Son of Denethor",
+    username: "boromir",
+    Groups: [All, Fellowship, Humans],
+    isActivated: false,
+    isBanned: false,
+  },
+  {
+    id: 7,
+    name: "Gimli, Son of Gloin",
+    username: "gimli",
+    Groups: [All, Fellowship],
+    isActivated: false,
+    isBanned: false,
+  },
+  {
+    id: 8,
+    name: "Legolas Greenleaf",
+    username: "legolas",
+    Groups: [All, Fellowship, Elves],
+    isActivated: false,
+    isBanned: false,
+  },
+  {
+    id: 9,
+    name: "Gandalf the Grey",
+    username: "mithrandir",
+    Groups: [All, Fellowship, Wizards],
+    isActivated: false,
+    isBanned: false,
+  },
+  {
+    id: 10,
+    name: "Radagast the Brown",
+    username: "radagast",
+    Groups: [All, Wizards],
+    isActivated: false,
+    isBanned: false,
+  },
+  {
+    id: 11,
+    name: "Arwen Undomiel",
+    username: "arwen",
+    Groups: [All, Elves],
+    isActivated: false,
+    isBanned: false,
+  },
+  {
+    id: 12,
+    name: "Elrond Peredhel",
+    username: "elrond",
+    Groups: [All, Elves],
+    isActivated: false,
+    isBanned: false,
+  },
+  {
+    id: 13,
+    name: "Saruman the White",
+    username: "saruman",
+    Groups: [All, Wizards],
+    isActivated: false,
+    isBanned: true,
+  },
+  {
+    id: 14,
+    name: "Grima Wormtongue",
+    username: "grima",
+    Groups: [All, Humans],
+    isActivated: false,
+    isBanned: true,
+  },
+];
+
+export { Groups, Users };

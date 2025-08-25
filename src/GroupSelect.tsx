@@ -1,14 +1,14 @@
-import React from "react";
 import "./GroupSelect.css";
 
-/**
- * @typedef GroupSelectProps
- * @prop {(string) => void} onChange - function to call when the value of this element changes, passed the selected group id
- * @prop {Array<GroupInfo>} [groups=[]] - list of groups to display
- */
+import type { GroupInfo } from "./api";
 
-export default function GroupSelect(/** @type {GroupSelectProps} */ props) {
-  const { groups = [], onChange } = props;
+type GroupSelectProps = {
+  onChange: (groupId: string) => void;
+  groups: GroupInfo[];
+};
+
+export default function GroupSelect(props: GroupSelectProps) {
+  const { groups, onChange } = props;
 
   return (
     <select

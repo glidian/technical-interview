@@ -5,17 +5,18 @@
  * endpoints below, which exercise basic endpoint and database operations
  ****************************************************************************************/
 
-const path = require("path");
-const express = require("express");
-const bodyParser = require("body-parser");
+import path from "path";
+import express from "express";
+import bodyParser from "body-parser";
 
-const { User, Group } = require("./db");
+import db from "./db/index.js";
+const { Group } = db;
 
 const app = express();
 
 app.use(bodyParser.json());
 
-app.use("/", express.static(path.resolve(__dirname, "..", "build")));
+app.use("/", express.static(path.resolve(process.cwd(), "build")));
 
 /******************************
  * START ENDPOINT DEFINITIONS *
@@ -30,7 +31,7 @@ app.use("/", express.static(path.resolve(__dirname, "..", "build")));
 app.get("/groups", async (req, res, next) => {
   try {
     // db query for all groups, returning only the id and name columns
-    const groups = await Group.findAll({ attributes: ["id", "name"] })
+    const groups = await Group.findAll({ attributes: ["id", "name"] });
     // all requests must eventually call one of the following:
     // 1. res.json(obj) - serializes obj to JSON (with toJSON() if necessary) and return it in the response body
     // 2. res.send() - return an empty response body
@@ -62,8 +63,8 @@ app.get("/groups/:groupId/users", async (req, res, next) => {
  * END ENDPOINT DEFINITIONS *
  ****************************/
 
-app.listen(5000, () => {
-  console.log("App running on http://localhost:5000");
+app.listen(8081, () => {
+  console.log("App running on http://localhost:8081");
 });
 
-module.exports = app;
+export default app;

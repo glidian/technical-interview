@@ -2,14 +2,15 @@
  * This file is used to populate the database with initial data, found in ./fixtures
  *********************************************************************************/
 
-const _ = require('lodash');
-const fixtures = require('./fixtures');
+import { Groups, Users } from "./fixtures.js";
 
-module.exports = async function (models) {
-  await models.Group.bulkCreate(fixtures.Groups);
-  await models.User.bulkCreate(fixtures.Users);
-  const userGroups = _.flattenDeep(
-    fixtures.Users.map(user => user.Groups.map(group => ({UserId: user.id, GroupId: group.id })))
-  );
+async function loadFixtures(models) {
+  await models.Group.bulkCreate(Groups);
+  await models.User.bulkCreate(Users);
+  const userGroups = Users.flatMap((user) => {
+    return user.Groups.map((group) => ({ UserId: user.id, GroupId: group.id }));
+  });
   await models.UserGroup.bulkCreate(userGroups);
-};
+}
+
+export default loadFixtures;
