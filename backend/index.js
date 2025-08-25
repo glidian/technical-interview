@@ -63,8 +63,8 @@ app.get("/groups/:groupId/users", async (req, res, next) => {
  * END ENDPOINT DEFINITIONS *
  ****************************/
 
-app.listen(5000, () => {
-  console.log("App running on http://localhost:5000");
+app.listen(8081, () => {
+  console.log("App running on http://localhost:8081");
 });
 
 export default app;

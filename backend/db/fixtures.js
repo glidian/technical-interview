@@ -54,14 +54,14 @@ const Users = [
   {
     id: 3,
     name: "Meriadoc Brandybuck",
-    username: "meriadoc",
+    username: "merry",
     Groups: [All, Hobbits, Fellowship],
     isActivated: false,
     isBanned: false,
   },
   {
     id: 4,
-    name: "Pippin Took",
+    name: "Peregrine Took",
     username: "pippin",
     Groups: [All, Hobbits, Fellowship],
     isActivated: false,
@@ -69,7 +69,7 @@ const Users = [
   },
   {
     id: 5,
-    name: "Aragorn, son of Arathorn",
+    name: "Aragorn, Son of Arathorn",
     username: "strider",
     Groups: [All, Fellowship, Humans],
     isActivated: false,
@@ -93,7 +93,7 @@ const Users = [
   },
   {
     id: 8,
-    name: "Legolas",
+    name: "Legolas Greenleaf",
     username: "legolas",
     Groups: [All, Fellowship, Elves],
     isActivated: false,
@@ -101,15 +101,15 @@ const Users = [
   },
   {
     id: 9,
-    name: "Gandalf",
-    username: "gandalf",
+    name: "Gandalf the Grey",
+    username: "mithrandir",
     Groups: [All, Fellowship, Wizards],
     isActivated: false,
     isBanned: false,
   },
   {
     id: 10,
-    name: "Radagast",
+    name: "Radagast the Brown",
     username: "radagast",
     Groups: [All, Wizards],
     isActivated: false,
@@ -117,7 +117,7 @@ const Users = [
   },
   {
     id: 11,
-    name: "Arwen",
+    name: "Arwen Undomiel",
     username: "arwen",
     Groups: [All, Elves],
     isActivated: false,
@@ -125,7 +125,7 @@ const Users = [
   },
   {
     id: 12,
-    name: "Elrond",
+    name: "Elrond Peredhel",
     username: "elrond",
     Groups: [All, Elves],
     isActivated: false,
@@ -133,7 +133,7 @@ const Users = [
   },
   {
     id: 13,
-    name: "Saruman",
+    name: "Saruman the White",
     username: "saruman",
     Groups: [All, Wizards],
     isActivated: false,
